@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="RestarantDataAccessLayer/RestarantDataAccessLayer.csproj" Id="e65c3717-34f2-4b28-87c6-db81e45f6099" />
+  <Project Path="RestaurrantPoject/RestaurrantPoject.csproj" Id="4c2c0b3f-5e0f-4ef7-a8cc-5c94833fefae" />
+  <Project Path="RetaurantBusinessLayer/RetaurantBusinessLayer.csproj" Id="0b658563-a106-4508-b98a-ad156b9e0a49" />
+</Solution>

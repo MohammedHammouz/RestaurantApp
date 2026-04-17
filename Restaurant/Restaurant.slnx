@@ -1,5 +1,0 @@
-<Solution>
-  <Project Path="RastaurantDataLayer/RastaurantDataLayer.csproj" />
-  <Project Path="Restaurant/Restaurant.csproj" />
-  <Project Path="RestaurantBusinessLayer/RestaurantBusinessLayer.csproj" />
-</Solution>

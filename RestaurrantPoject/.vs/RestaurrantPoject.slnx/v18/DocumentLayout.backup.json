@@ -7,19 +7,19 @@
       "RelativeMoniker": "D:0:0:{E65C3717-34F2-4B28-87C6-DB81E45F6099}|RestarantDataAccessLayer\\RestarantDataAccessLayer.csproj|solutionrelative:restarantdataaccesslayer\\clsroleuserpermissions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65C3717-34F2-4B28-87C6-DB81E45F6099}|RestarantDataAccessLayer\\RestarantDataAccessLayer.csproj|c:\\users\\m7ama\\onedrive\\desktop\\resaurant project\\restaurantapp\\restaurrantpoject\\restarantdataaccesslayer\\clscustomers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E65C3717-34F2-4B28-87C6-DB81E45F6099}|RestarantDataAccessLayer\\RestarantDataAccessLayer.csproj|C:\\Users\\m7ama\\OneDrive\\Desktop\\Resaurant Project\\RestaurantApp\\RestaurrantPoject\\restarantdataaccesslayer\\clscustomers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E65C3717-34F2-4B28-87C6-DB81E45F6099}|RestarantDataAccessLayer\\RestarantDataAccessLayer.csproj|solutionrelative:restarantdataaccesslayer\\clscustomers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65C3717-34F2-4B28-87C6-DB81E45F6099}|RestarantDataAccessLayer\\RestarantDataAccessLayer.csproj|c:\\users\\m7ama\\onedrive\\desktop\\resaurant project\\restaurantapp\\restaurrantpoject\\restarantdataaccesslayer\\clsadminsdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E65C3717-34F2-4B28-87C6-DB81E45F6099}|RestarantDataAccessLayer\\RestarantDataAccessLayer.csproj|C:\\Users\\m7ama\\OneDrive\\Desktop\\Resaurant Project\\RestaurantApp\\RestaurrantPoject\\restarantdataaccesslayer\\clsadminsdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E65C3717-34F2-4B28-87C6-DB81E45F6099}|RestarantDataAccessLayer\\RestarantDataAccessLayer.csproj|solutionrelative:restarantdataaccesslayer\\clsadminsdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65C3717-34F2-4B28-87C6-DB81E45F6099}|RestarantDataAccessLayer\\RestarantDataAccessLayer.csproj|c:\\users\\m7ama\\onedrive\\desktop\\resaurant project\\restaurantapp\\restaurrantpoject\\restarantdataaccesslayer\\clsdatasettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E65C3717-34F2-4B28-87C6-DB81E45F6099}|RestarantDataAccessLayer\\RestarantDataAccessLayer.csproj|C:\\Users\\m7ama\\OneDrive\\Desktop\\Resaurant Project\\RestaurantApp\\RestaurrantPoject\\restarantdataaccesslayer\\clsdatasettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E65C3717-34F2-4B28-87C6-DB81E45F6099}|RestarantDataAccessLayer\\RestarantDataAccessLayer.csproj|solutionrelative:restarantdataaccesslayer\\clsdatasettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C2C0B3F-5E0F-4EF7-A8CC-5C94833FEFAE}|RestaurrantPoject\\RestaurrantPoject.csproj|c:\\users\\m7ama\\onedrive\\desktop\\resaurant project\\restaurantapp\\restaurrantpoject\\restaurrantpoject\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{4C2C0B3F-5E0F-4EF7-A8CC-5C94833FEFAE}|RestaurrantPoject\\RestaurrantPoject.csproj|C:\\Users\\m7ama\\OneDrive\\Desktop\\Resaurant Project\\RestaurantApp\\RestaurrantPoject\\restaurrantpoject\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4C2C0B3F-5E0F-4EF7-A8CC-5C94833FEFAE}|RestaurrantPoject\\RestaurrantPoject.csproj|solutionrelative:restaurrantpoject\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -42,8 +42,7 @@
               "RelativeToolTip": "RestarantDataAccessLayer\\clsCustomers.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAHUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T14:57:24.41Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:57:24.41Z"
             },
             {
               "$type": "Document",
@@ -53,7 +52,7 @@
               "RelativeDocumentMoniker": "RestarantDataAccessLayer\\clsRoleUserPermissions.cs",
               "ToolTip": "C:\\Users\\m7ama\\OneDrive\\Desktop\\Resaurant Project\\RestaurantApp\\RestaurrantPoject\\RestarantDataAccessLayer\\clsRoleUserPermissions.cs",
               "RelativeToolTip": "RestarantDataAccessLayer\\clsRoleUserPermissions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAqwBkAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-17T14:54:32.171Z",
               "EditorCaption": ""
@@ -68,8 +67,7 @@
               "RelativeToolTip": "RestarantDataAccessLayer\\clsAdminsDataAccess.cs",
               "ViewState": "AgIAAFwAAAAAAAAAAAAgwFEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T14:52:54.485Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:52:54.485Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "RestarantDataAccessLayer\\clsDataSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T13:26:44.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T13:26:44.17Z"
             },
             {
               "$type": "Document",
@@ -93,8 +90,7 @@
               "ToolTip": "C:\\Users\\m7ama\\OneDrive\\Desktop\\Resaurant Project\\RestaurantApp\\RestaurrantPoject\\RestaurrantPoject\\Form1.cs [Design]",
               "RelativeToolTip": "RestaurrantPoject\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T13:20:53.279Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-04-17T13:20:53.279Z"
             }
           ]
         }

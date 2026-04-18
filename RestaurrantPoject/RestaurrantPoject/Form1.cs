@@ -15,6 +15,7 @@ namespace RestaurrantPoject
         public Form1()
         {
             InitializeComponent();
+
         }
     }
 }

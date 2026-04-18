@@ -1,0 +1,13 @@
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\obj\Debug\RestaurantPoject.csprojAssemblyReference.cache
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\obj\Debug\RestaurrantPoject.Form1.resources
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\obj\Debug\RestaurrantPoject.Properties.Resources.resources
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\obj\Debug\RestaurantPoject.csproj.GenerateResource.cache
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\obj\Debug\RestaurantPoject.csproj.CoreCompileInputs.cache
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\bin\Debug\RestaurrantPoject.exe.config
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\bin\Debug\RestaurrantPoject.exe
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\bin\Debug\RestaurrantPoject.pdb
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\bin\Debug\RetaurantBusinessLayer.dll
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\bin\Debug\RetaurantBusinessLayer.pdb
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\obj\Debug\RestaurantPoject.csproj.CopyComplete
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\obj\Debug\RestaurrantPoject.exe
+C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RestaurrantPoject\obj\Debug\RestaurrantPoject.pdb

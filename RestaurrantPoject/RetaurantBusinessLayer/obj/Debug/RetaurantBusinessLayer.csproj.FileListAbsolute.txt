@@ -16,3 +16,9 @@ C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RetaurantBusinessLayer\
 C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RetaurantBusinessLayer\obj\Debug\RetaurantBusinessLayer.csproj.CopyComplete
 C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RetaurantBusinessLayer\obj\Debug\RetaurantBusinessLayer.dll
 C:\Users\Mahmoud\Desktop\RestaurantApp\RestaurrantPoject\RetaurantBusinessLayer\obj\Debug\RetaurantBusinessLayer.pdb
+C:\Users\Mahmoud\Desktop\New\RestaurantApp\RestaurrantPoject\RetaurantBusinessLayer\bin\Debug\RetaurantBusinessLayer.dll
+C:\Users\Mahmoud\Desktop\New\RestaurantApp\RestaurrantPoject\RetaurantBusinessLayer\bin\Debug\RetaurantBusinessLayer.pdb
+C:\Users\Mahmoud\Desktop\New\RestaurantApp\RestaurrantPoject\RetaurantBusinessLayer\obj\Debug\RetaurantBusinessLayer.csprojAssemblyReference.cache
+C:\Users\Mahmoud\Desktop\New\RestaurantApp\RestaurrantPoject\RetaurantBusinessLayer\obj\Debug\RetaurantBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Mahmoud\Desktop\New\RestaurantApp\RestaurrantPoject\RetaurantBusinessLayer\obj\Debug\RetaurantBusinessLayer.dll
+C:\Users\Mahmoud\Desktop\New\RestaurantApp\RestaurrantPoject\RetaurantBusinessLayer\obj\Debug\RetaurantBusinessLayer.pdb

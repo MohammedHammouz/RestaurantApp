@@ -4,6 +4,6 @@ namespace RestaurantDataAccessLayer
 {
     internal static class clsDataAccessSettings
     {
-        public static string ConnectionString = "server=localhost; database = ResturantDB; user ID = sa; password = sa123456;";  // ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        public static string ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
     }
 }

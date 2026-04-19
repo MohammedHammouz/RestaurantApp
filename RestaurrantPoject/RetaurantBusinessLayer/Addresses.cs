@@ -1,111 +1,109 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using RestaurantDataAccessLayer;
 using RestaurantDataAccessLayer.DTOs.AddressDTO;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using static RestaurantDataAccessLayer.DTOs.AddressDTO.AddressDTO;
 
 namespace RetaurantBusinessLayer
 {
-    public class Address
+    internal class Addresses
     {
-        public class Geography
+        public enum enMode
         {
-            public double? Latitude { set; get; }
-            public double? Longitude { set; get; }
+            AddNew = 0,
+            Update = 1
+        }
+        public Guid AddressID { get; set; }
+        public string State { get; set; }
+        public string PostalCode { get; set; }
+        public string StreetAddress { get; set; }
+        public AddressDTO.GeographyDTO GPSLocation { get; set; }
+        public Guid CountryID { get; set; }
+        public Guid CityID { get; set; }
 
-            public Geography(double? Latitude, double? Longitude)
-            {
-                this.Latitude = Latitude;
-                this.Longitude = Longitude;
-            }
+        public enMode Mode = enMode.AddNew;
+
+
+
+        public Addresses()
+        {
+
         }
 
-        private enum enMode { AddNew = 0, Update = 1 }
-        private enMode _Mode;
-
-        public Guid AddressID { set; get; }
-        public string State { set; get; }
-        public string PostalCode { set; get; }
-        public string StreetAddress { set; get; }
-        public Geography GPSLocation { set; get; }
-        public Guid CountryID { set; get; }
-        public Guid CityID { set; get; }
-
-        public Address()
+        private Addresses(Guid AddressID,string State,string PostalCode,string StreetAddress,AddressDTO.GeographyDTO GPSLocation,Guid CountryID,Guid CityID)
         {
-            this._Mode = enMode.AddNew;
+            this.AddressID = AddressID;
+            this.State = State;
+            this.PostalCode = PostalCode;
+            this.StreetAddress = StreetAddress;
+            this.GPSLocation = GPSLocation;
+            this.CountryID = CountryID;
+            this.CityID = CityID;
+            Mode = enMode.Update;
         }
 
-        private Address(AddressDTO AddressDTO)
+        public static async Task<IEnumerable<AddressDTO>> GetAllAddresses(int PageNumber, int RowsPerPage)
         {
-            this.AddressID = AddressDTO.AddressID;
-            this.State = AddressDTO.State;
-            this.PostalCode = AddressDTO.PostalCode;
-            this.StreetAddress = AddressDTO.StreetAddress;
-            this.GPSLocation = new Geography(AddressDTO.GPSLocation.Latitude, AddressDTO.GPSLocation.Longitude);
-            this.CountryID = AddressDTO.CountryID;
-            this.CityID = AddressDTO.CityID;
-
-            this._Mode = enMode.Update;
+            return await Address.GetAllAddresses(PageNumber,RowsPerPage);
         }
 
-        private async Task<bool> AddNewAddress()
-        {
-            this.AddressID = await RestaurantDataAccessLayer.Address.AddNewAddress(new AddressDTO(this.State, this.PostalCode, this.StreetAddress, new AddressDTO.GeographyDTO(this.GPSLocation.Latitude, this.GPSLocation.Longitude), this.CountryID, this.CityID));
 
-            return (this.AddressID != Guid.Empty);
+
+        private  async Task<bool> _AddNew()
+        {
+
+            AddressID = await Address.AddNewAddress(new AddressDTO(Guid.Empty, State, PostalCode, StreetAddress, GPSLocation, CountryID, CityID));
+            return AddressID != Guid.Empty;
         }
 
-        private async Task<bool> UpdateAddress()
+        private async Task<bool> _Update()
         {
-            return await RestaurantDataAccessLayer.Address.UpdateAddress(new AddressDTO(this.AddressID, this.State, this.PostalCode, this.StreetAddress, new AddressDTO.GeographyDTO(this.GPSLocation.Latitude, this.GPSLocation.Longitude), this.CountryID, this.CityID));
+            return await Address.UpdateAddress(new AddressDTO(AddressID,State,PostalCode,StreetAddress,GPSLocation,CountryID,CityID));
         }
-
-        public async Task<bool> Save()
+        public static async Task<bool> DeleteAddress(Guid AddressID)
         {
-            switch (_Mode)
+           return await Address.DeleteAddress(AddressID);
+        }
+        public static async Task<bool> IsAddressExists(Guid AddressID)
+        {
+            return await Address.IsAddressExists(AddressID);
+        }
+        public static async Task<Addresses> GetAddressInfoByAddressID(Guid AddressID) {
+            string State, PostalCode, StreetAddress;
+            AddressDTO.GeographyDTO GPSLocation;
+            Guid CountryID ,CityID;
+            AddressDTO addressDTO = await Address.GetAddressInfoByAddressID(AddressID);
+            State = addressDTO.State;
+            PostalCode = addressDTO.PostalCode;
+            StreetAddress = addressDTO.StreetAddress;
+            GPSLocation = addressDTO.GPSLocation;
+            CountryID = addressDTO.CountryID;
+            CityID = addressDTO.CityID;
+            return new Addresses(AddressID, State, PostalCode, StreetAddress, GPSLocation, CountryID, CityID);
+        }
+         public async Task<bool> Save()
+
+        {
+            switch (Mode)
             {
                 case enMode.AddNew:
-                    if (await AddNewAddress())
+                    if (await _AddNew())
                     {
-                        _Mode = enMode.Update;
+                        Mode = enMode.Update;
                         return true;
                     }
-                    break;
+                    return false;
+
                 case enMode.Update:
-                    return await UpdateAddress();
+                    return await _Update();
             }
 
             return false;
-        }
-
-        public static async Task<Address> GetAddressInfoByID(Guid AddressID)
-        {
-            var Address = await RestaurantDataAccessLayer.Address.GetAddressInfoByAddressID(AddressID);
-
-            if (Address == null)
-                return null;
-
-            return new Address(Address);
-        }
-
-        public static async Task<object> GetAllAddresses(int PageNumber = 1, int RowsPerPage = 50)
-        {
-            var Addresses = await RestaurantDataAccessLayer.Address.GetAllAddresses(PageNumber, RowsPerPage);
-
-            return Addresses.Select(Address => new
-            {
-                Address.AddressID,
-                Address.State,
-                Address.PostalCode,
-                Address.StreetAddress,
-                Address.CountryName,
-                Address.CityName
-            }).ToList();
-        }
-
-        public static async Task<bool> IsAddressExists(Guid AddressID)
-        {
-            return await RestaurantDataAccessLayer.Address.IsAddressExists(AddressID);
         }
     }
 }

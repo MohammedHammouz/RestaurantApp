@@ -66,7 +66,7 @@ namespace BusinessLayer
         }
 
 
-        public async Task<Roles> GetRoleInfoByID(Guid RoleID)
+        public static async Task<Roles> GetRoleInfoByID(Guid RoleID)
         {
             var dto = await Role.GetRoleInfo(RoleID);
             if (dto == null)

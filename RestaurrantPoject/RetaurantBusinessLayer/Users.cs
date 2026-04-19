@@ -26,6 +26,7 @@ namespace RetaurantBusinessLayer
         public string ImagePath { get; set; }
         public DateTime DateOfBirth { get; set; }
         public Guid? AddressID { get; set; }
+
         public Users()
         {
             this.UserID = Guid.Empty;

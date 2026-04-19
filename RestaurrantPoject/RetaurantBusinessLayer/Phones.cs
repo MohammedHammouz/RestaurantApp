@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RetaurantBusinessLayer
 {
-    internal class Phones
+    public class Phones
     {
         public enum enMode
         {
@@ -31,7 +31,7 @@ namespace RetaurantBusinessLayer
 
         public Guid UserID { get; set; }
 
-
+        public Users user { get; set; }
         public Phones()
         {
             this.PhoneID = Guid.Empty;
@@ -48,7 +48,10 @@ namespace RetaurantBusinessLayer
             this.UserID = UserID;
             Mode = enMode.Update;
         }
-
+        public async Task LoadUser()
+        {
+            user = await Users.GetUserInfoByID(UserID);
+        }
         public static async Task<IEnumerable<PhoneListDTO>> GetAllTB_Phones(int PageNumber, int RowsPerPage)
         {
             return await Phone.GetAllPhones(PageNumber,RowsPerPage);

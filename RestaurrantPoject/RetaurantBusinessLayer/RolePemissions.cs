@@ -20,7 +20,7 @@ namespace BusinessLayer
 
         public enMode Mode = enMode.AddNew;
 
-
+        Roles roles = new Roles();
 
         public Guid RoleUserPermissionID { get; set; }
 
@@ -45,7 +45,10 @@ namespace BusinessLayer
             this.Permission = -1;
 
         }
-
+        public async Task LoadRole()
+        {
+            roles = await Roles.GetRoleInfoByID(RoleID);
+        }
         private RoleUserPermissions(
             Guid RoleUserPermissionID, Guid RoleID, Guid AdminID, int Permission)
         {

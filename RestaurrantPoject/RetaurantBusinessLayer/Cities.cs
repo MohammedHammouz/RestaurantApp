@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace RetaurantBusinessLayer
 {
-    internal class Cities
+    public class Cities
     {
         public enum enMode
         {
             AddNew = 0,
             Update = 1
         }
-
+        
         public enMode Mode = enMode.AddNew;
 
 
@@ -31,7 +31,7 @@ namespace RetaurantBusinessLayer
 
         public Guid CountryID { get; set; }
 
-
+        public Countries countries { get; set; }
         public Cities()
         {
             this.CityID = Guid.Empty;
@@ -47,7 +47,10 @@ namespace RetaurantBusinessLayer
             this.CountryID = CountryID;
             Mode = enMode.Update;
         }
-
+        public async Task LoadCountry()
+        {
+            countries = await Countries.GetCountryInfoByCountryID(CountryID);
+        }
         public static async Task<IEnumerable<CityListDTO>> GetAllCities(int PageNumber, int RowsPerPage)
         {
             return await City.GetAllCities(PageNumber,RowsPerPage);

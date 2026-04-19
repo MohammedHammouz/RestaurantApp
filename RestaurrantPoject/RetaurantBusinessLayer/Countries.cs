@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RetaurantBusinessLayer
 {
-    internal class Countries
+    public class Countries
     {
         public enum enMode
         {
@@ -47,11 +47,11 @@ namespace RetaurantBusinessLayer
         {
             return await Country.GetAllCountries(PageNumber,RowsPerPage);
         }
-        public async Task<Countries> GetCountryInfoByCountryID(Guid CountryID)
+        public static async Task<Countries> GetCountryInfoByCountryID(Guid CountryID)
         {
-            CountryDTO DTO = await Country.GetCountryInfoByCountryID(CountryID);
-            CountryName = DTO.CountryName;
-            return new Countries(CountryID, CountryName);
+            var DTO = await Country.GetCountryInfoByCountryID(CountryID);
+            
+            return new Countries(CountryID, DTO.CountryName);
         }
         public async Task<Countries> GetCountryInfoByCountryName(string CountryName)
         {
@@ -59,7 +59,7 @@ namespace RetaurantBusinessLayer
             CountryID = DTO.CountryID;
             return new Countries(CountryID, CountryName);
         }
-
+        
         private async Task <bool> _AddNew()
         {
             CountryDTO dto = new CountryDTO(Guid.Empty,CountryName);

@@ -152,7 +152,7 @@ namespace RestaurantDataAccessLayer
             return false;
         }
 
-        public static async Task<IEnumerable<AddressDTO>> GetAllAddresses(int PageNumber, int RowsPerPage)
+        public static async Task<IEnumerable<AddressListDTO>> GetAllAddresses(int PageNumber, int RowsPerPage)
         {
             try
             {
@@ -163,7 +163,7 @@ namespace RestaurantDataAccessLayer
                     Parameters.Add("RowsPerPage", RowsPerPage);
 
 
-                    return await Db.QueryAsync<AddressDTO>(
+                    return await Db.QueryAsync<AddressListDTO>(
                                 "sp_Addresses_GetAll",
                                 commandType: CommandType.StoredProcedure, 
                                 param: Parameters);
@@ -178,7 +178,7 @@ namespace RestaurantDataAccessLayer
                 clsLogger.ErrorMessage(ex.Message, ex, System.Diagnostics.EventLogEntryType.Error);
             }
 
-            return new List<AddressDTO>();
+            return new List<AddressListDTO>();
         }
 
         public static async Task<bool> IsAddressExists(Guid AddressID)

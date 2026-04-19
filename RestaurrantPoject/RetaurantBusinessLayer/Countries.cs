@@ -73,15 +73,15 @@ namespace RetaurantBusinessLayer
             return await Country.UpdateCountry(dto);
         }
           
-        public async Task<bool> DeleteCountry(Guid CountryID)
+        public static async Task<bool> DeleteCountry(Guid CountryID)
         {
             return await Country.DeleteCountry(CountryID);
         }
-        public async Task<bool> IsCountryExistsByID(Guid CountryID)
+        public static async Task<bool> IsCountryExistsByID(Guid CountryID)
         {
             return await Country.IsCountryExists(CountryID);
         }
-        public async Task<bool> IsCountryExistsByName(string CountryName)
+        public static async Task<bool> IsCountryExistsByName(string CountryName)
         {
             return await Country.IsCountryExists(CountryName);
         }

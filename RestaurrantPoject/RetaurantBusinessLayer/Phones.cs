@@ -93,11 +93,11 @@ namespace RetaurantBusinessLayer
         {
             return await Phone.DeletePhone(PhoneID);
         }
-        public async Task<bool> IsExistByPhoneID()
+        public static async Task<bool> IsExistByPhoneID(Guid PhoneID)
         {
             return await Phone.IsPhoneExists(PhoneID);
         }
-        public async Task<bool> IsExistByPhoneNumber()
+        public static async Task<bool> IsExistByPhoneNumber(string PhoneNumber)
         {
             return await Phone.IsPhoneExists(PhoneNumber);
         }

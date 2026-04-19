@@ -76,7 +76,7 @@ namespace RetaurantBusinessLayer
             CreatedByAdminID = customerDTO.CreatedByAdminID;
             return new Customers(CustomerID, FullName, CreatedAt, LoyalityPoints, PhoneNumber, CreatedByAdminID);
         }
-        public async Task<bool> DeleteCustomer(Guid CustomerID)
+        public static async Task<bool> DeleteCustomer(Guid CustomerID)
         {
             return await Customer.DeleteCustomer(CustomerID);
         }
@@ -84,7 +84,7 @@ namespace RetaurantBusinessLayer
         {
             return await Customer.GetAllCustomers(PageNumber,RowsPerPage);
         }
-        public async Task<bool> IsCustomerExists(Guid CustomerID)
+        public static async Task<bool> IsCustomerExists(Guid CustomerID)
         {
             return await Customer.IsCustomerExists(CustomerID);
         }

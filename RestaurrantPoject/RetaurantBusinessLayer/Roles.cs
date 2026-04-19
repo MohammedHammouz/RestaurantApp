@@ -84,15 +84,15 @@ namespace BusinessLayer
             }
             return new Roles(dto.RoleID, dto.RoleName);
         }
-        public async Task<bool> DeleteRole()
+        public static async Task<bool> DeleteRole(Guid RoleID)
         {
             return await Role.DeleteRole(RoleID); 
         }
-        public async Task<bool> IsRoleExistsByRoleID()
+        public static async Task<bool> IsRoleExistsByRoleID(Guid RoleID)
         {
             return await Role.IsRoleExists(RoleID);
         }
-        public async Task<bool> IsRoleExistsByRoleName()
+        public static async Task<bool> IsRoleExistsByRoleName(string RoleName)
         {
             return await Role.IsRoleExists(RoleName);
         }

@@ -90,11 +90,11 @@ namespace RetaurantBusinessLayer
             }
             return false;
         }
-        public async Task<bool> DeleteCity(Guid CityID)
+        public static async Task<bool> DeleteCity(Guid CityID)
         {
             return await City.DeleteCity(CityID);
         }
-        public async Task<bool> IsCityExists(Guid CityID)
+        public static async Task<bool> IsCityExists(Guid CityID)
         {
            return await City.IsCityExists(CityID);
         }

@@ -96,7 +96,7 @@ namespace BusinessLayer
         {
            return await RoleUserPermission.DeleteRoleUserPermission(RoleUserPermissionID);
         }
-        public async Task<bool> IsRoleUserPermissionExistsByRoleUserPermissionID(Guid RoleUserPermissionID)
+        public static async Task<bool> IsRoleUserPermissionExistsByRoleUserPermissionID(Guid RoleUserPermissionID)
         {
             return await RoleUserPermission.IsRoleUserPermissionExistsByRoleUserPermissionID(RoleUserPermissionID);
         }

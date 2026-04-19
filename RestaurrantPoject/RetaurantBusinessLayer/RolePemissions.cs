@@ -74,23 +74,21 @@ namespace BusinessLayer
             RoleUserPermissionDTO DTO = new RoleUserPermissionDTO(RoleUserPermissionID, RoleID, Permission, AdminID);
             return await RoleUserPermission.UpdateRoleUserPermission(DTO);
         }
-        public async Task<RoleUserPermissions> GetRoleUserPermissionInfoByRoleUserPermissionID(Guid RoleUserPermissionID)
+        public static async Task<RoleUserPermissions> GetRoleUserPermissionInfoByRoleUserPermissionID(Guid RoleUserPermissionID)
         {
             
             RoleUserPermissionDTO DTO =await RoleUserPermission.GetRoleUserPermissionInfo(RoleUserPermissionID);
-            RoleID = DTO.RoleID;
-            Permission = DTO.Permission;
-            AdminID = DTO.AdminID;
-            return new RoleUserPermissions(RoleUserPermissionID, RoleID, AdminID, Permission);
+            if (DTO == null)
+                return null;
+            return  new RoleUserPermissions(RoleUserPermissionID, DTO.RoleID, DTO.AdminID, DTO.Permission);
         }
-        public async Task<RoleUserPermissions> GetRoleUserPermissionInfoByAdminID(Guid AdminID)
+        public static async Task<RoleUserPermissions> GetRoleUserPermissionInfoByAdminID(Guid AdminID)
         {
 
             RoleUserPermissionDTO DTO = await RoleUserPermission.GetRoleUserPermissionInfoByAdminID(AdminID);
-            RoleID = DTO.RoleID;
-            Permission = DTO.Permission;
-            RoleUserPermissionID = DTO.RoleUserPermissionID;
-            return new RoleUserPermissions(RoleUserPermissionID, RoleID, AdminID, Permission);
+            if (DTO == null)
+                return null;
+            return new RoleUserPermissions(DTO.RoleUserPermissionID, DTO.RoleID, AdminID, DTO.Permission);
         }
         public async Task<bool> DeletePermission()
         {

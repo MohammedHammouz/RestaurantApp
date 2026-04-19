@@ -98,14 +98,18 @@ namespace RetaurantBusinessLayer
         {
             return await Employee.IsEmployeeExistsByUserID(UserID);
         }
-        public async Task<Employees> GetEmployeeInfoByUserID(Guid UserID)
+        public static async Task<Employees> GetEmployeeInfoByUserID(Guid UserID)
         {
             EmployeeDTO employeeDTO = await Employee.GetEmployeeInfoByUserID(UserID);
+            if (employeeDTO == null)
+                return null;
             return new Employees(employeeDTO.EmployeeID, UserID, employeeDTO.JobTitleName, employeeDTO.HireDate, employeeDTO.MonthlySalary);
         }
-        public async Task<Employees> GetEmployeeInfoByEmployeeID(Guid EmployeeID)
+        public static async Task<Employees> GetEmployeeInfoByEmployeeID(Guid EmployeeID)
         {
             EmployeeDTO employeeDTO = await Employee.GetEmployeeInfoByEmployeeID(EmployeeID);
+            if (employeeDTO == null)
+                return null;
             return new Employees(EmployeeID, employeeDTO.UserID, employeeDTO.JobTitleName, employeeDTO.HireDate, employeeDTO.MonthlySalary);
         }
          public async Task<bool> Save()

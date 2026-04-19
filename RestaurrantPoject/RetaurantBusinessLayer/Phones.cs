@@ -80,7 +80,7 @@ namespace RetaurantBusinessLayer
             }
             return new Phones(dto.PhoneID, dto.PhoneNumber, dto.UserID);
         }
-        public async Task<Phones> GetPhoneInfoByPhoneNumber(string PhoneNumber)
+        public static async Task<Phones> GetPhoneInfoByPhoneNumber(string PhoneNumber)
         {
             var dto = await Phone.GetPhoneInfoByPhoneNumber(PhoneNumber);
             if (dto == null)

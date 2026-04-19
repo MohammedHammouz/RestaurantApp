@@ -58,9 +58,9 @@ namespace RetaurantBusinessLayer
         public async Task<Cities> GetCityInfoByCityID(Guid CityID)
         {
             CityDTO DTO = await City.GetCityInfoByCityID(CityID);
-            CityName = DTO.CityName;
-            CountryID = DTO.CountryID;
-            return new Cities(CityID,CityName,CountryID);
+            if (DTO == null)
+                return null;
+            return new Cities(CityID, DTO.CityName, DTO.CountryID);
         }
         private async Task<bool> _AddNew()
         {

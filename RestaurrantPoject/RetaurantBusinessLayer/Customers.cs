@@ -66,15 +66,12 @@ namespace RetaurantBusinessLayer
             this.CreatedByAdminID = CreatedByAdminID;
             Mode = enMode.Update;
         }
-        public async Task<Customers> GetCustomerInfoByCustomerID(Guid CustomerID)
+        public static async Task<Customers> GetCustomerInfoByCustomerID(Guid CustomerID)
         {
             CustomerDTO customerDTO =await Customer.GetCustomerInfoByCustomerID(CustomerID);
-            FullName = customerDTO.FullName;
-            CreatedAt = customerDTO.CreatedAt;
-            LoyalityPoints = customerDTO.LoyalityPoints;
-            PhoneNumber = customerDTO.PhoneNumber;
-            CreatedByAdminID = customerDTO.CreatedByAdminID;
-            return new Customers(CustomerID, FullName, CreatedAt, LoyalityPoints, PhoneNumber, CreatedByAdminID);
+            if (customerDTO == null)
+                return null;
+            return new Customers(CustomerID, customerDTO.FullName, customerDTO.CreatedAt, customerDTO.LoyalityPoints, customerDTO.PhoneNumber, customerDTO.CreatedByAdminID);
         }
         public static async Task<bool> DeleteCustomer(Guid CustomerID)
         {

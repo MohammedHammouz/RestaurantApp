@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static RestaurantDataAccessLayer.DTOs.AddressDTO.AddressDTO;
 
 namespace RetaurantBusinessLayer
 {
@@ -71,6 +72,19 @@ namespace RetaurantBusinessLayer
         public static async Task<bool> IsAddressExists(Guid AddressID)
         {
             return await Address.IsAddressExists(AddressID);
+        }
+        public static async Task<Addresses> GetAddressInfoByAddressID(Guid AddressID) {
+            string State, PostalCode, StreetAddress;
+            AddressDTO.GeographyDTO GPSLocation;
+            Guid CountryID ,CityID;
+            AddressDTO addressDTO = await Address.GetAddressInfoByAddressID(AddressID);
+            State = addressDTO.State;
+            PostalCode = addressDTO.PostalCode;
+            StreetAddress = addressDTO.StreetAddress;
+            GPSLocation = addressDTO.GPSLocation;
+            CountryID = addressDTO.CountryID;
+            CityID = addressDTO.CityID;
+            return new Addresses(AddressID, State, PostalCode, StreetAddress, GPSLocation, CountryID, CityID);
         }
          public async Task<bool> Save()
 

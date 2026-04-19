@@ -50,7 +50,8 @@ namespace RetaurantBusinessLayer
         public static async Task<Countries> GetCountryInfoByCountryID(Guid CountryID)
         {
             var DTO = await Country.GetCountryInfoByCountryID(CountryID);
-            
+            if (DTO == null)
+                return null;
             return new Countries(CountryID, DTO.CountryName);
         }
         public async Task<Countries> GetCountryInfoByCountryName(string CountryName)

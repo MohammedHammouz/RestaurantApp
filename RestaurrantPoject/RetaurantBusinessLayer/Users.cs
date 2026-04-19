@@ -25,7 +25,7 @@ namespace RetaurantBusinessLayer
         public bool Gender { get; set; }
         public string ImagePath { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public Guid AddressID { get; set; }
+        public Guid? AddressID { get; set; }
         public Users()
         {
             this.UserID = Guid.Empty;
@@ -38,8 +38,8 @@ namespace RetaurantBusinessLayer
             this.AddressID = Guid.Empty;
 
         }
-        private Users(
-            Guid UserID, string FirstName, string SecondName, string LastName, bool Gender, string ImagePath, DateTime DateOfBirth, Guid AddressID)
+        protected Users(
+           Guid UserID, string FirstName, string SecondName, string LastName, bool Gender, string ImagePath, DateTime DateOfBirth, Guid? AddressID)
         {
             this.UserID = UserID;
             this.FirstName = FirstName;
@@ -55,12 +55,21 @@ namespace RetaurantBusinessLayer
         {
             return await User.GetAllUsers(PageNumber,RowsPerPage);
         }
+        public static async Task<Users> GetUserInfoByID(Guid UserID)
+        {
+            var dto =await User.GetUserInfoByID(UserID);
+            if (dto == null)
+            {
+                return null;
+            }
+            return new Users(dto.UserID, dto.FirstName, dto.SecondName, dto.LastName, dto.Gender, dto.ImagePath, dto.DateOfBirth, dto.AddressID);
+        }
         private async Task<bool> _AddNew()
         {
             
             UserID =
-                await(User.AddNewUser(
-                    new UserDTO(UserID, FirstName, SecondName, LastName, Gender, ImagePath, DateOfBirth, AddressID)));
+                await User.AddNewUser(
+                    new UserDTO());
 
             return UserID != Guid.Empty;
         }

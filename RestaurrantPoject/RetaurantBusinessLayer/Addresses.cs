@@ -47,12 +47,10 @@ namespace RetaurantBusinessLayer
             Mode = enMode.Update;
         }
 
-        public static async Task<IEnumerable<AddressDTO>> GetAllAddresses(int PageNumber, int RowsPerPage)
+        public static Task<IEnumerable<AddressDTO>> GetAllAddresses(int PageNumber, int RowsPerPage)
         {
-            return await Address.GetAllAddresses(PageNumber,RowsPerPage);
+            return Address.GetAllAddresses(PageNumber,RowsPerPage);
         }
-
-
 
         private  async Task<bool> _AddNew()
         {
@@ -61,17 +59,17 @@ namespace RetaurantBusinessLayer
             return AddressID != Guid.Empty;
         }
 
-        private async Task<bool> _Update()
+        private  Task<bool> _Update()
         {
-            return await Address.UpdateAddress(new AddressDTO(AddressID,State,PostalCode,StreetAddress,GPSLocation,CountryID,CityID));
+            return  Address.UpdateAddress(new AddressDTO(AddressID,State,PostalCode,StreetAddress,GPSLocation,CountryID,CityID));
         }
-        public static async Task<bool> DeleteAddress(Guid AddressID)
+        public static Task<bool> DeleteAddress(Guid AddressID)
         {
-           return await Address.DeleteAddress(AddressID);
+           return  Address.DeleteAddress(AddressID);
         }
-        public static async Task<bool> IsAddressExists(Guid AddressID)
+        public static Task<bool> IsAddressExists(Guid AddressID)
         {
-            return await Address.IsAddressExists(AddressID);
+            return Address.IsAddressExists(AddressID);
         }
         public static async Task<Addresses> GetAddressInfoByAddressID(Guid AddressID) {
             string State, PostalCode, StreetAddress;
